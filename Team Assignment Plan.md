@@ -25,14 +25,13 @@ A structured breakdown of responsibilities for building the Library Management S
 
 ### Functions to Implement in `utils/file_handler.py`
 
-- [ ] `load_data(filepath)`
+- [*] `load_data(filepath)`
   - Read a JSON file.
   - Include `try...except` error handling so the app does not crash if the file is missing.
-- [ ] `save_data(filepath, data)`
+- [*] `save_data(filepath, data)`
   - Write updated dictionaries back to JSON.
-- [ ] `initialize_system()`
+- [*] `initialize_system()`
   - Load both JSON files.
-  - Convert loaded lists into dictionaries.
 
 ### Important Rule
 

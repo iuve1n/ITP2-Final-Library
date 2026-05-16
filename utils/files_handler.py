@@ -1,5 +1,5 @@
 import json
-import models 
+from models import Book, User 
 
 def load_data(filepath):
     try:
@@ -12,9 +12,6 @@ def load_data(filepath):
         print(f"An unexpected error occurred! The message is: {e}")
         return []
         
-books = load_data("data/books.json")
-users = load_data("data/books.json")
-
 def save_data(data , filepath):
     try:
         with open(filepath , "w") as file:
@@ -22,6 +19,15 @@ def save_data(data , filepath):
     except Exception as e:
         print(f"An unexpected error occurred! The message is: {e}")
     
+def initialize_system():
+    data = load_data("data/books.json")
+    for dict in data: 
+        Book(dict)
+    data = load_data("data/users.json")
+    for dict in data:
+        User(dict)
+
+
 
 
 
