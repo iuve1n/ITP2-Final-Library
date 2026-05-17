@@ -7,3 +7,5 @@ class User:
         else:
             self.active_borrowed_books=set(borrowed_books_list)
         self.borrow_history=[]
+    def get_role(self):
+        return "Library User"
