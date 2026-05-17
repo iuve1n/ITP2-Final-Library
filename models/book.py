@@ -9,3 +9,6 @@ class Book:
 
     def set_availability(self, status):
         self.__is_available = bool(status)
+        def __str__(self):
+            status="Available" if self.__is_available else "Borrowed"
+            return f"[{self.book_id}] '{self.title}' by {self.author}-{status}"
