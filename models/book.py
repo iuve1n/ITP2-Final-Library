@@ -4,3 +4,8 @@ class Book:
         self.title = title
         self.author = author
         self.__is_available = bool(available)
+    def get_availability(self):
+        return self.__is_available
+
+    def set_availability(self, status):
+        self.__is_available = bool(status)
