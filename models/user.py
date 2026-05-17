@@ -9,3 +9,8 @@ class User:
         self.borrow_history=[]
     def get_role(self):
         return "Library User"
+    
+    def add_book(self,book_id):
+        self.acive_borrowed_books.add(book_id)
+    def remove_book(self,book_id):
+        self.acive_borrowed_books.discard(book_id)
