@@ -3,7 +3,7 @@ class User:
         self.user_id=int(user_id)
         self.name=name
         if borrowed_books_list==None:
-            self.acive_borrowed_books=set()
+            self.active_borrowed_books=set()
         else:
             self.active_borrowed_books=set(borrowed_books_list)
         self.borrow_history=[]
@@ -11,6 +11,6 @@ class User:
         return "Library User"
     
     def add_book(self,book_id):
-        self.acive_borrowed_books.add(book_id)
+        self.active_borrowed_books.add(book_id)
     def remove_book(self,book_id):
-        self.acive_borrowed_books.discard(book_id)
+        self.active_borrowed_books.discard(book_id)
