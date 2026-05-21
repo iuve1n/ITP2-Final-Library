@@ -1,11 +1,14 @@
 class Book:
-    def __init__(self, book_id, title, author, available=True):
-        self.book_id = int(book_id)
-        self.title = title
-        self.author = author
-        self.__is_available = bool(available)
+    def __init__(self, dict, available=True):
+        self.book_id = dict["book_id"]
+        self.title = dict["title"]
+        self.author = dict["author"]
+        self.__is_available = bool(dict["available"])
     def get_availability(self):
         return self.__is_available
+    
+    def get_id(self):
+        return self.book_id
 
     def set_availability(self, status):
         self.__is_available = bool(status)
