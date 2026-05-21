@@ -2,7 +2,7 @@ import unittest
 
 from models.book import Book
 from models.user import User
-from services.library_service import borrow_book
+from services.library_service import borrow_book, return_book
 
 
 class TestServices(unittest.TestCase):
@@ -25,6 +25,16 @@ class TestServices(unittest.TestCase):
         borrow_book(10, 1, self.users, self.books)
         with self.assertRaises(ValueError):
             borrow_book(10, 1, self.users, self.books)
+
+    def test_return_book_updates_history(self):
+        borrow_book(10, 1, self.users, self.books)
+        result = return_book(10, 1, self.users, self.books)
+
+        self.assertTrue(result)
+        self.assertTrue(self.books[1].get_availability())
+        self.assertNotIn(1, self.users[10].active_borrowed_books)
+        self.assertEqual(len(self.users[10].borrow_history), 1)
+        self.assertEqual(self.users[10].borrow_history[0][0], 1)
 
 
 if __name__ == '__main__':
