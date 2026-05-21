@@ -5,8 +5,11 @@ def load_data(filepath , cls):
     try:
         with open(filepath , 'r') as file: 
             data = json.load(file)
+            result = {}
             for dict in data: 
-                cls(data)
+                obj = cls(dict)
+                result[obj.getId()] = obj
+            return result
     except FileNotFoundError:
         print("File is missing!")
         return []
@@ -22,8 +25,8 @@ def save_data(data , filepath):
         print(f"An unexpected error occurred! The message is: {e}")
     
 def initialize_system():
-    books_data = load_data("data/books.json" )
-    user_data = load_data("data/users.json")
+    books_data = load_data("data/books.json", Book)
+    user_data = load_data("data/users.json" , User)
     
 
 
