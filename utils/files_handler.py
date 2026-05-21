@@ -8,14 +8,14 @@ def load_data(filepath , cls):
             result = {}
             for dict in data: 
                 obj = cls(dict)
-                result[obj.getId()] = obj
+                result[obj.get_id()] = obj
             return result
     except FileNotFoundError:
         print("File is missing!")
-        return []
+        return {}
     except Exception as e:
         print(f"An unexpected error occurred! The message is: {e}")
-        return []
+        return {}
         
 def save_data(data , filepath):
     try:
