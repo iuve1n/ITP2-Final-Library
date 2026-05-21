@@ -27,7 +27,7 @@ def save_data(data , filepath):
 def initialize_system():
     books_data = load_data("data/books.json", Book)
     user_data = load_data("data/users.json" , User)
-    
+    return books_data , user_data
 
 
 
