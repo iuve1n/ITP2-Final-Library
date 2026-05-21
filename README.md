@@ -1,16 +1,24 @@
 # Library Management System
 
-Project skeleton created — files are intentionally minimal per request.
+A simple library management system with book borrowing, returns, and user history tracking.
 
-Structure:
-- models/
-- services/
-- utils/
-- data/
-- tests/
+## Run the application
 
-Run tests:
+From the project root:
 
 ```bash
-python -m unittest discover -s library_management/tests
+python main.py
 ```
+
+## Run tests
+
+```bash
+python -m unittest discover -s tests
+```
+
+## Team members
+
+- Student1 - Olzhas
+- Student2 - Miras
+- Student3 - Amirlan
+- Student4 - Mansur
