@@ -1,1 +1,62 @@
-[]
+[
+    {
+        "book_id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "available": true
+    },
+    {
+        "book_id": 2,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "available": true
+    },
+    {
+        "book_id": 3,
+        "title": "1984",
+        "author": "George Orwell",
+        "available": false
+    },
+    {
+        "book_id": 4,
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "available": true
+    },
+    {
+        "book_id": 5,
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "available": true
+    },
+    {
+        "book_id": 6,
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "available": false
+    },
+    {
+        "book_id": 7,
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "available": true
+    },
+    {
+        "book_id": 8,
+        "title": "Jane Eyre",
+        "author": "Charlotte Bronte",
+        "available": true
+    },
+    {
+        "book_id": 9,
+        "title": "Wuthering Heights",
+        "author": "Emily Bronte",
+        "available": false
+    },
+    {
+        "book_id": 10,
+        "title": "The Odyssey",
+        "author": "Homer",
+        "available": true
+    }
+]
