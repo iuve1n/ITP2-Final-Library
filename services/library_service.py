@@ -42,3 +42,10 @@ def yield_available_books(books_dict):
     for book in books_dict.values():
         if book.get_availability():
             yield book
+
+
+def get_user_history(user_id, users_dict):
+    matches = list(filter(lambda user: user.user_id == user_id, users_dict.values()))
+    if not matches:
+        raise ValueError("User does not exist.")
+    return matches[0].borrow_history

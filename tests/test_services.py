@@ -2,7 +2,7 @@ import unittest
 
 from models.book import Book
 from models.user import User
-from services.library_service import borrow_book, return_book, yield_available_books
+from services.library_service import borrow_book, return_book, get_user_history, yield_available_books
 
 
 class TestServices(unittest.TestCase):
@@ -43,6 +43,19 @@ class TestServices(unittest.TestCase):
 
         self.assertEqual(len(available_books), 1)
         self.assertEqual(available_books[0].book_id, 1)
+
+    def test_get_user_history_returns_borrow_history(self):
+        borrow_book(10, 1, self.users, self.books)
+        return_book(10, 1, self.users, self.books)
+
+        history = get_user_history(10, self.users)
+
+        self.assertEqual(len(history), 1)
+        self.assertEqual(history[0][0], 1)
+
+    def test_get_user_history_missing_user_raises(self):
+        with self.assertRaises(ValueError):
+            get_user_history(999, self.users)
 
 
 if __name__ == '__main__':
