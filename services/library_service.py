@@ -36,3 +36,9 @@ def return_book(user_id, book_id, users_dict, books_dict):
     book.set_availability(True)
     user.borrow_history.append((book_id, datetime.now()))
     return True
+
+
+def yield_available_books(books_dict):
+    for book in books_dict.values():
+        if book.get_availability():
+            yield book
