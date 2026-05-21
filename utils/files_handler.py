@@ -1,13 +1,15 @@
 import json
-from models import Book, User 
+from models.book import Book
+from models.user import User
 
-def load_data(filepath , cls):
+
+def load_data(filepath, cls):
     try:
-        with open(filepath , 'r') as file: 
+        with open(filepath, 'r', encoding='utf-8') as file:
             data = json.load(file)
             result = {}
-            for dict in data: 
-                obj = cls(dict)
+            for item in data:
+                obj = cls(item)
                 result[obj.get_id()] = obj
             return result
     except FileNotFoundError:
@@ -16,18 +18,30 @@ def load_data(filepath , cls):
     except Exception as e:
         print(f"An unexpected error occurred! The message is: {e}")
         return {}
-        
-def save_data(data , filepath):
+
+
+def save_data(filepath, data):
     try:
-        with open(filepath , "w") as file:
-            json.dump(data , file , indent = 4)
+        output = []
+        if isinstance(data, dict):
+            for item in data.values():
+                if hasattr(item, "to_dict"):
+                    output.append(item.to_dict())
+                else:
+                    output.append(item)
+        else:
+            output = data
+
+        with open(filepath, "w", encoding='utf-8') as file:
+            json.dump(output, file, indent=4)
     except Exception as e:
         print(f"An unexpected error occurred! The message is: {e}")
-    
+
+
 def initialize_system():
     books_data = load_data("data/books.json", Book)
-    user_data = load_data("data/users.json" , User)
-    return books_data , user_data
+    users_data = load_data("data/users.json", User)
+    return books_data, users_data
 
 
 
