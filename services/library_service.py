@@ -44,6 +44,25 @@ def yield_available_books(books_dict):
             yield book
 
 
+def yield_all_books(books_dict):
+    for book in books_dict.values():
+        yield book
+
+
+def yield_all_users(users_dict):
+    for user in users_dict.values():
+        yield user
+
+
+def get_books_by_author(author_name, books_dict):
+    """Get all books by a specific author."""
+    books = []
+    for book in books_dict.values():
+        if book.author.lower() == author_name.lower():
+            books.append(book)
+    return books
+
+
 def get_user_history(user_id, users_dict):
     if user_id not in users_dict:
         raise ValueError("User does not exist.")

@@ -2,16 +2,27 @@ import unittest
 
 from models.book import Book
 from models.user import User
-from services.library_service import borrow_book, return_book, get_user_history, yield_available_books
+from services.library_service import (
+    borrow_book,
+    get_books_by_author,
+    get_user_history,
+    return_book,
+    yield_all_books,
+    yield_all_users,
+    yield_available_books,
+)
 
 
 class TestServices(unittest.TestCase):
     def setUp(self):
         self.books = {
-            1: Book({"book_id": 1, "title": "Sample Book", "author": "Author", "available": True})
+            1: Book({"book_id": 1, "title": "Sample Book", "author": "Author One", "available": True}),
+            2: Book({"book_id": 2, "title": "Book Two", "author": "Author One", "available": True}),
+            3: Book({"book_id": 3, "title": "Other Book", "author": "Author Two", "available": True})
         }
         self.users = {
-            10: User({"user_id": 10, "name": "Jane Doe", "borrowed_books_list": []})
+            10: User({"user_id": 10, "name": "Jane Doe", "borrowed_books_list": []}),
+            11: User({"user_id": 11, "name": "John Smith", "borrowed_books_list": []})
         }
 
     def test_borrow_book_success(self):
@@ -37,12 +48,47 @@ class TestServices(unittest.TestCase):
         self.assertEqual(self.users[10].borrow_history[0][0], 1)
 
     def test_yield_available_books_returns_available_only(self):
-        self.books[2] = Book({"book_id": 2, "title": "Borrowed", "author": "Author", "available": False})
+        self.books[4] = Book({"book_id": 4, "title": "Borrowed", "author": "Author", "available": False})
 
         available_books = list(yield_available_books(self.books))
 
-        self.assertEqual(len(available_books), 1)
-        self.assertEqual(available_books[0].book_id, 1)
+        self.assertEqual(len(available_books), 3)
+        self.assertTrue(all(book.get_availability() for book in available_books))
+
+    def test_yield_all_books_returns_all(self):
+        self.books[4] = Book({"book_id": 4, "title": "Borrowed", "author": "Author", "available": False})
+
+        all_books = list(yield_all_books(self.books))
+
+        self.assertEqual(len(all_books), 4)
+
+    def test_yield_all_users_returns_all(self):
+        all_users = list(yield_all_users(self.users))
+
+        self.assertEqual(len(all_users), 2)
+
+    def test_get_books_by_author_single_book(self):
+        books = get_books_by_author("Author Two", self.books)
+
+        self.assertEqual(len(books), 1)
+        self.assertEqual(books[0].book_id, 3)
+
+    def test_get_books_by_author_multiple_books(self):
+        books = get_books_by_author("Author One", self.books)
+
+        self.assertEqual(len(books), 2)
+        self.assertIn(self.books[1], books)
+        self.assertIn(self.books[2], books)
+
+    def test_get_books_by_author_case_insensitive(self):
+        books = get_books_by_author("author one", self.books)
+
+        self.assertEqual(len(books), 2)
+
+    def test_get_books_by_author_not_found(self):
+        books = get_books_by_author("Unknown Author", self.books)
+
+        self.assertEqual(len(books), 0)
 
     def test_get_user_history_returns_borrow_history(self):
         borrow_book(10, 1, self.users, self.books)

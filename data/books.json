@@ -58,5 +58,17 @@
         "title": "The Odyssey",
         "author": "Homer",
         "available": true
+    },
+    {
+        "book_id": 11,
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "available": true
+    },
+    {
+        "book_id": 12,
+        "title": "The Silmarillion",
+        "author": "J.R.R. Tolkien",
+        "available": true
     }
 ]
