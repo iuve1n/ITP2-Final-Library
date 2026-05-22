@@ -116,7 +116,7 @@ Borrowed successfully.
 
 | Name | Role |
 |------|------|
-| Olzhas | Developer |
-| Miras | Developer |
-| Amirlan | Developer |
-| Mansur | Developer |
+| Olzhas | JSON handling, Optimization for O(1) lookups |
+| Miras | OOP, Polymorphism, Inheritance, Encapsulation |
+| Amirlan | Python features, library_service.py |
+| Mansur | Unit testing, decorator, main.py |
