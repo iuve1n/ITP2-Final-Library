@@ -71,10 +71,13 @@ python main.py
 
 The CLI will present a menu with the following options:
 1. View Available Books
-2. Borrow a Book
-3. Return a Book
-4. View User History
-5. Exit
+2. View all Books
+3. View all Users 
+4. Find Books by Author
+5. Borrow a Book
+6. Return a Book
+7. View User History
+0. Exit
 
 ## Running Tests
 
