@@ -1,52 +1,87 @@
 [
     {
-        "user_id": 10,
-        "name": "Jane Doe",
+        "user_id": 252234,
+        "name": "Assemgazy Olzhas",
         "borrowed_books_list": []
     },
     {
-        "user_id": 11,
-        "name": "John Smith",
+        "user_id": 250129,
+        "name": "Kuan Amirlan",
         "borrowed_books_list": [1, 2]
     },
     {
-        "user_id": 12,
-        "name": "Alice Johnson",
+        "user_id": 251618,
+        "name": "Tulkibay Miras",
         "borrowed_books_list": []
     },
     {
-        "user_id": 13,
-        "name": "Bob Wilson",
+        "user_id": 252145,
+        "name": "Saginbek Mansur",
         "borrowed_books_list": [3]
     },
     {
-        "user_id": 14,
-        "name": "Emma Brown",
+        "user_id": 252345,
+        "name": "Aleksander Kolpakov",
         "borrowed_books_list": [4, 5, 6]
     },
     {
-        "user_id": 15,
-        "name": "Michael Davis",
+        "user_id": 252201,
+        "name": "Yerkezhan Imanova",
         "borrowed_books_list": []
     },
     {
-        "user_id": 16,
-        "name": "Sarah Miller",
-        "borrowed_books_list": [7]
-    },
-    {
-        "user_id": 17,
-        "name": "Chris Anderson",
-        "borrowed_books_list": [8, 9]
-    },
-    {
-        "user_id": 18,
-        "name": "Jessica Taylor",
+        "user_id": 252202,
+        "name": "Maksat Tursyn",
         "borrowed_books_list": []
     },
     {
-        "user_id": 19,
-        "name": "Daniel Martinez",
-        "borrowed_books_list": [10]
+        "user_id": 252203,
+        "name": "Aslan Sabyr",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252204,
+        "name": "Nazym Kulchikova",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252205,
+        "name": "Sunggat Serikov",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252206,
+        "name": "Meiirbek Berdibek",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252207,
+        "name": "Abilmansur Berikzhan",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252208,
+        "name": "Altair Abdraissov",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252209,
+        "name": "Arailym Amangeldi",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252210,
+        "name": "Vyacheslav Borovikov",
+        "borrowed_books_list": []
+    },
+    {
+        "user_id": 252211,
+        "name": "Adema Berimzhanova",
+        "borrowed_books_list": [9]
+    },
+    {
+        "user_id": 252212,
+        "name": "Alisher Alimbayev",
+        "borrowed_books_list": []
     }
 ]

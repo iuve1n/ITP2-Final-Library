@@ -13,7 +13,7 @@ class TestLibraryMain(unittest.TestCase):
             1: Book({"book_id": 1, "title": "Sample Book", "author": "Author", "available": True})
         }
         self.users = {
-            10: User({"user_id": 10, "name": "Jane Doe", "borrowed_books_list": []})
+            10: User({"user_id": 259929, "name": "Miras Tastan", "borrowed_books_list": []})
         }
 
     def test_borrow_book_action_success_prints_transaction_time(self):

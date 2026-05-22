@@ -7,7 +7,7 @@ class User(Person):
         borrowed_books = user_data.get("borrowed_books_list") or []
         self.active_borrowed_books = set(borrowed_books)
         self.borrow_history = list(user_data.get("borrow_history", []))
-
+    
     def get_role(self):
         return "Library User"
 
