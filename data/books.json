@@ -70,5 +70,35 @@
         "title": "The Silmarillion",
         "author": "J.R.R. Tolkien",
         "available": true
+    },
+    {
+        "book_id": 13,
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "available": true
+    },
+    {
+        "book_id": 14,
+        "title": "The Brothers Karamazov",
+        "author": "Fyodor Dostoevsky",
+        "available": true
+    },
+    {
+        "book_id": 15,
+        "title": "The Idiot",
+        "author": "Fyodor Dostoevsky",
+        "available": true
+    },
+    {
+        "book_id": 16,
+        "title": "The Path of Abay (Vol. 1)",
+        "author": "Mukhtar Auezov",
+        "available": true
+    },
+    {
+        "book_id": 17,
+        "title": "The Path of Abay (Vol. 2)",
+        "author": "Mukhtar Auezov",
+        "available": false
     }
 ]

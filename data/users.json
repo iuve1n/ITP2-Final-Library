@@ -2,12 +2,17 @@
     {
         "user_id": 252234,
         "name": "Assemgazy Olzhas",
-        "borrowed_books_list": []
+        "borrowed_books_list": [
+            17
+        ]
     },
     {
         "user_id": 250129,
         "name": "Kuan Amirlan",
-        "borrowed_books_list": [1, 2]
+        "borrowed_books_list": [
+            1,
+            2
+        ]
     },
     {
         "user_id": 251618,
@@ -17,12 +22,18 @@
     {
         "user_id": 252145,
         "name": "Saginbek Mansur",
-        "borrowed_books_list": [3]
+        "borrowed_books_list": [
+            3
+        ]
     },
     {
         "user_id": 252345,
         "name": "Aleksander Kolpakov",
-        "borrowed_books_list": [4, 5, 6]
+        "borrowed_books_list": [
+            4,
+            5,
+            6
+        ]
     },
     {
         "user_id": 252201,
@@ -77,7 +88,9 @@
     {
         "user_id": 252211,
         "name": "Adema Berimzhanova",
-        "borrowed_books_list": [9]
+        "borrowed_books_list": [
+            9
+        ]
     },
     {
         "user_id": 252212,

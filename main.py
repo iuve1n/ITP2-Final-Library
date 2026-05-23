@@ -62,9 +62,9 @@ def main():
         print("5. Borrow a Book")
         print("6. Return a Book")
         print("7. View User History")
-        print("8. Exit")
+        print("0. Exit")
 
-        choice = input("Select an option (1-8): ").strip()
+        choice = input("Select an option (0-7): ").strip()
 
         if choice == "1":
             available_books = list(yield_available_books(books))
@@ -91,14 +91,14 @@ def main():
                 print(format_user_line(user))
 
         elif choice == "4":
-            author_name = input("Enter author name: ").strip()
-            books_by_author = get_books_by_author(author_name, books)
-            if not books_by_author:
-                print(f"No books found by author '{author_name}'.")
-                continue
-            print(f"Books by {author_name}:")
-            for book in books_by_author:
-                print(format_book_line(book))
+            try:
+                author_name = input("Enter author name: ").strip()
+                books_list = get_books_by_author(author_name)
+                for b in books_list:
+                    print(b)
+            except Exception as error:
+                print(f"Error: {error}")
+            
 
         elif choice == "5":
             try:
@@ -137,7 +137,7 @@ def main():
             break
 
         else:
-            print("Invalid selection. Please choose a number from 1 to 8.")
+            print("Invalid selection. Please choose a number from 0-7.")
 
 
 if __name__ == "__main__":

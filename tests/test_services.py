@@ -15,6 +15,7 @@ from services.library_service import (
 
 class TestServices(unittest.TestCase):
     def setUp(self):
+        Book.books_by_author = {}
         self.books = {
             1: Book({"book_id": 1, "title": "Sample Book", "author": "Author One", "available": True}),
             2: Book({"book_id": 2, "title": "Book Two", "author": "Author One", "available": True}),
@@ -68,27 +69,27 @@ class TestServices(unittest.TestCase):
         self.assertEqual(len(all_users), 2)
 
     def test_get_books_by_author_single_book(self):
-        books = get_books_by_author("Author Two", self.books)
+        books = get_books_by_author("Author Two")
 
         self.assertEqual(len(books), 1)
         self.assertEqual(books[0].book_id, 3)
 
     def test_get_books_by_author_multiple_books(self):
-        books = get_books_by_author("Author One", self.books)
+        books = get_books_by_author("Author One")
 
         self.assertEqual(len(books), 2)
         self.assertIn(self.books[1], books)
         self.assertIn(self.books[2], books)
 
     def test_get_books_by_author_case_insensitive(self):
-        books = get_books_by_author("author one", self.books)
+        books = get_books_by_author("author one")
 
         self.assertEqual(len(books), 2)
 
     def test_get_books_by_author_not_found(self):
-        books = get_books_by_author("Unknown Author", self.books)
-
-        self.assertEqual(len(books), 0)
+        with self.assertRaises(ValueError):
+            get_books_by_author("Unknown Author")
+        
 
     def test_get_user_history_returns_borrow_history(self):
         borrow_book(10, 1, self.users, self.books)

@@ -1,5 +1,5 @@
 from datetime import datetime
-
+from models.book import Book
 
 def borrow_book(user_id, book_id, users_dict, books_dict):
     if user_id not in users_dict:
@@ -54,13 +54,11 @@ def yield_all_users(users_dict):
         yield user
 
 
-def get_books_by_author(author_name, books_dict):
-    """Get all books by a specific author."""
-    books = []
-    for book in books_dict.values():
-        if book.author.lower() == author_name.lower():
-            books.append(book)
-    return books
+def get_books_by_author(author_name):
+    author_name = author_name.lower()
+    if author_name not in Book.books_by_author:
+        raise ValueError("Author doesn't exist")
+    return Book.books_by_author[author_name]
 
 
 def get_user_history(user_id, users_dict):
